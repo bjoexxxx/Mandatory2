@@ -4,7 +4,7 @@ import { View, Text, TextInput, Button, Modal, StyleSheet } from "react-native";
 import axios from 'axios';
 
 
-export default function LoginScreen(){
+export default function LoginScreen({navigation}){
 
     const [userEmail, setUserEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -90,6 +90,7 @@ export default function LoginScreen(){
             console.log("logget ind " + response.data.localId)
             setUserId(response.data.localId)
             closeModal()
+             navigation.navigate('Geotracking', { userId: response.data.localId })
             }catch(error){
             alert("ikke logget ind " + error.response.data.error.errors[0].message)
             }
