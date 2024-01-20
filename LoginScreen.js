@@ -43,6 +43,7 @@ export default function LoginScreen({navigation}){
                             //secureTextEntry
                         />
                         <Button title='Login' onPress={() => validateLogin()}/>
+                        <Button title='Cancel' onPress={() => closeModal()}/>
                     </View>
                 </View>          
             </Modal>
@@ -65,6 +66,7 @@ export default function LoginScreen({navigation}){
                             //secureTextEntry
                         />
                         <Button title='Sign Up' onPress={() => signup()}/>
+                        <Button title='Cancel' onPress={() => closeModal2()}/>
                     </View>
                 </View>          
             </Modal>
